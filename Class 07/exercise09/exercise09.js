@@ -14,4 +14,4 @@ function greatestCommonDivisor(a, b) {
 
 console.log(greatestCommonDivisor(14, 21)); // returns 7
 console.log(greatestCommonDivisor(69, 169)); // returns 1
-console.log(greatestCommonDivisor(63, 9)); // returns 9
+console.log(greatestCommonDivisor(-63, 9)); // returns 9
