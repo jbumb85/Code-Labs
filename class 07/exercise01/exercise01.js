@@ -1,11 +1,18 @@
-// Aim: Write a function redundantReturn that takes in a string a parameter named str. This function should return another function that returns a message using the str variable. Print that message to the developer console.
-
-function redundantReturn(str) {
-  return function () {
-    console.log(`${str}, my name is John`);
-  };
+function numberGenerator() {
+  // Local “free” variable that ends up within the closure
+  let num = 1;
+  function checkNumber() {
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
 }
 
-let newRedundantReturn = redundantReturn("Hello");
+var number = numberGenerator();
+number();
 
-newRedundantReturn();
+// What will number() log to the console?
+
+// It will say 2 because it will log num in the checkNumber function after it has been increased by 1 in the numberGenerator function.
+
+// You have solved this exercise when you understand the solution.

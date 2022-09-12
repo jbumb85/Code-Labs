@@ -1,30 +1,30 @@
-// You will be given an array of drinks, with each drink being an object with two properties: name and price. Create a function with the drinks array as an argument and return the drinks objects sorted by price in ascending order.
+// You may need a piece of paper.
 
-// Assume that the following array of drink objects needs to be sorted:
+let x = 10;
 
-// drinks = [
-//   { name: "lemonade", price: 50 },
-//   { name: "lime", price: 10 }
-// ];
-// The output of the sorted drinks object will be:
+function foo(a) {
+  let b = 20;
 
-// Examples
+  function bar(c) {
+    let d = 30;
+    return boop(x + a + b + c + d);
+  }
 
-// const drinksByPrice = sortDrinkByPrice(drinks);
+  function boop(e) {
+    console.log(e * -1);
+  }
 
-// console.log(drinksByPrice); // [{name: "lime", price: 10}, {name: "lemonade", price: 50
-
-let drinks = [
-  { name: "lemonade", price: 50 },
-  { name: "lime", price: 10 },
-];
-
-function softDrinksByPrice(arr) {
-  return function () {
-    return arr.sort((a, b) => a.price - b.price);
-  };
+  return bar;
 }
 
-const drinksByPrice = softDrinksByPrice(drinks);
+let moar = foo(5); // Closure
 
-console.log(drinksByPrice());
+moar(15);
+
+// What will moar log to the console?
+
+// It will return -80 because it calls for moar = foo(5). so then you plug 5 into the foo function for placeholder a. The c value would be whatever is called with moar because it is calling to execute th inner function of foo. In this case it is 15. Then you move to function bar which returns boop(80). Then you would move to the boop function and do 80 * -1. then you wold return the bar function that would make the answer -80.
+
+// Before executing the code, think about this. To check your answer, execute this code.
+
+// You have solved this exercise when you understand the solution.

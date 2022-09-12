@@ -1,26 +1,11 @@
-// Aim: Create the function that takes an array with objects and returns the sum of people's budgets.
+// Aim: Write a function redundantReturn that takes in a string a parameter named str. This function should return another function that returns a message using the str variable. Print that message to the developer console.
 
-// Examples
-
-let getBudgets = [
-  { name: "John", age: 21, budget: 23000 },
-  { name: "Steve",  age: 32, budget: 40000 },
-  { name: "Martin",  age: 16, budget: 2700 }
-]  
-//  ➞    65700
-
-
-
-// let getBudgets = [
-//   { name: "John",  age: 21, budget: 29000 },
-//   { name: "Steve",  age: 32, budget: 32000 },
-//   { name: "Martin",  age: 16, budget: 1600 }
-// ]   
-// ➞    62600
-
-
-function addBudget() {
-    return getBudgets.reduce((previousValue, currentValue) => previousValue + currentValue.budget, 0);
+function redundantReturn(str) {
+  return function () {
+    console.log(`${str}, my name is John`);
+  };
 }
 
-console.log(addBudget(getBudgets));
+let newRedundantReturn = redundantReturn("Hello");
+
+newRedundantReturn();

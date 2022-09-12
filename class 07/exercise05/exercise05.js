@@ -1,19 +1,36 @@
-// Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
+// # Exercise #2: Intermediate
 
-// Examples
+// Closures are functions that remember their lexical environments. Lexical environments mean the environment in which the function was declared.
 
-// toArray({ a: 1, b: 2 })    ➞    [["a", 1], ["b", 2]]
+// ******************************************************************
 
-// toArray({ shrimp: 15, tots: 12 })    ➞    [["shrimp", 15], ["tots", 12]]
+//     function parent(x) {
+//     return function closure() {
+//         // Closure is declared here.
+//         return x;
+//     };
+//     }
 
-// toArray({})    ➞    []
+//     const remember = parent("remembers me");
+//     // Seems like the variable x would be gone after
+//     // parent is executed, but it's not.
 
+//     closure();
+//     // Return "remembers me"
 
-function toArray(obj) {
-   return Object.entries(obj);
+// ******************************************************************
+
+// **Aim:** Fix the code to correctly implement the callback.
+
+function parent(x) {
+  return function closure() {
+    // Closure is declared here.
+    return x;
+  };
 }
 
-console.log(toArray({a: 1, b: 2 }))  //  ➞    [["a", 1], ["b", 2]]))
-console.log(toArray({ shrimp: 15, tots: 12 })) //   ➞    [["shrimp", 15], ["tots", 12]]
+const remember = parent("remembers me");
+// Seems like the variable x would be gone after
+// parent is executed, but it's not.
 
-console.log(toArray({}))  //  ➞    []
+remember();
