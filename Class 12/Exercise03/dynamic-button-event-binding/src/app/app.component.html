@@ -1,0 +1,8 @@
+<input type="text" [disabled]="isDisabled" >
+
+
+<!-- event binding -->
+<button (click)="toggleDisable()">Click me to change the value of isDisabled</button>
+
+
+<p>{{ isDisabled ? 'Currently Disabled' : 'Not Disabled'}}</p>
